@@ -1,0 +1,41 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' href='/static/styles/multiple-choice.css')
+  title 17VP-DEVELOPPEMENT D'APPICATION WEB
+body
+    .lst-question-area
+        .information
+            .userinformation
+                div Họ và tên: #{userName} 
+                div CMND:      #{LoggedIn}
+            .timeCounter
+                p Th&#x1EDD;i gian l&agrave;m b&agrave;i
+                span#timer 90:00
+            .submit-area
+                #runTimer B&#x1EAF;t &dstrok;&#x1EA7;u
+                #btnSubmit(style='display: none;') Nộp bài
+                #btnExit Tho&aacute;t
+        .lst-question
+
+    .question-area
+        .question 
+        .answer
+            #answer1
+                h6 A
+                p
+            #answer2
+                h6 B
+                p 
+            #answer3
+                h6 C
+                p 
+            #answer4
+                h6 D
+                p
+        from
+            input#examId(type="hidden", name="hidden-input", value= examId)
+            input#curQues(type="hidden", name="cur-question", value= "1")
+    script(src='/static/JS/multiple-choice.js')

@@ -1,0 +1,81 @@
+extends ./layouts/common.pug
+block styleSheet
+    link(href='/static/styles/aboutproject.css', rel='stylesheet')
+    link(href='/static/styles/headerStyle.css', rel='stylesheet')
+    link(href='/static/styles/footerStyle.css', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap', rel='stylesheet')
+    
+
+block content
+    include ./includes/navbar.pug
+    #container
+        #content
+            #membergroup
+                #member
+                    a(href='https://www.facebook.com/toan.lumanh')
+                        img.img(src='ava/CDG.jpg')
+                        p.detail
+                            | LƯ MẠNH TOÀN
+                            br
+                            | Chef du group
+                #member
+                    a(href='https://www.facebook.com/profile.php?id=100006744828536')
+                        img.img(src='ava/MEM2.jpg')
+                        p.detail
+                            | ĐẶNG HỮU PHƯỚC VINH
+                            br
+                            | Membre
+                #member
+                    a(href='https://www.facebook.com/maitrongnhan07')
+                        img.img(src='ava/MEM3.jpg')
+                        p.detail
+                            | MAI TRỌNG NHÂN
+                            br
+                            | Membre
+                #member
+                    a(href='https://www.facebook.com/myphuong.le.184')
+                        img.img(src='ava/MEM4.jpg')
+                        p.detail
+                            | LÊ MỸ PHƯƠNG
+                            br
+                            | Membre
+            hr
+            #ContentProject
+                #AboutProject
+                    h2(style="margin-top:0;") Nom de Project:
+                    |  Phần mềm thi kiểm tra trắc nghiệm (Kì thi trung học phổ thông quốc gia)
+                    h2 Đối tượng áp dụng:
+                    |  Từ 15 tuổi trờ lên
+                #Object
+                    h2
+                    | Mục đích :
+                    |             Nhằm muốn thuận tiện cho việc tổ chức các kì thi trắc nghiệm giống các kì thi trung học phổ thông quốc gia, chúng tôi tạo ra phần mềm thực hiện công việc đó.
+                #TinhNang
+                    h2 Các tính năng chính của phần mềm thi:
+                    h2
+                    h3 Đối với USER THÍ SINH:
+                    ul
+                        li Tạo tài khoản
+                        li Lưu trữ thông tin điểm các user thông qua các kì thì
+                        li Tạo biểu đồ học lực thông qua điểm của các kì thi
+                        li
+                            | Đối với người không có user sẽ cũng sẽ có thi thử nhưng chỉ báo điểm ngay thời điểm đó
+                        li Đánh giá user (học lực, khả năng điểm đạt được của môn đó)
+                    h3 Đối với cá kì thi:
+                    ul
+                        li Tính giờ thi
+                        li
+                            | Báo ngay kết quả khi vừa hết giờ thi (show kết quả trên bài thi đã làm của thí sinh)
+                        li Báo điểm và lưu vào user
+                        li Phân loại các kì thi, môn học (15', 45', thi học kì, thi THPTQG)
+                        li
+                            | Tổ chức thi theo lớp (GV sẽ mở khung giờ cho user đăng nhập làm chung 1 khung thời gian)
+                        li Đánh giá bài thi trong từng môn học có lượng người làm nhiều nhất(Top Trending)
+                        li
+                            | Bảng vàng theo tuần cho từng môn học (Đánh giá dựa trên 10 người có điểm cao nhất trong từng môn, theo chất lượng bài thi, bài thi có độ khó chuẩn của bộ)
+                    h3 Đối với USER GIÁO VIÊN:
+                    ul
+                        li Tạo tính nhập tùy ý theo số lượng câu hỏi
+                        li Tạo tính năng chat lớp
+                        li Giáo viên gửi e-mail báo khung giờ thi cho học sinh
+    include ./includes/footer.pug

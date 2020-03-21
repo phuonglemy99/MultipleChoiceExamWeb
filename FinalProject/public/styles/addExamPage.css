@@ -1,0 +1,91 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #686b6a;
+}
+
+.addExam-container
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.addExam-container form {
+    margin: 0px 1%;
+    border-radius: 5px;
+    width: 25%;
+    font-size: 18px;
+    padding: 15px 15px;
+    box-shadow: 0px 0px 3px 1px rgb(105, 102, 102);
+}
+
+.addExam-container form h3 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.question-detail {
+    padding: 5px;
+    height: 320px;
+}
+
+.question-detail label {
+    float: left;
+    margin-right: 5px;
+}
+
+.question-detail .question,
+.question-detail .answer {
+
+    height: 12%;
+}
+
+.question-detail input,
+.question-detail select {
+    float: right;
+}
+
+#btn-addExam{
+    clear: both;
+}
+.exam-detail {
+    padding: 10px 15px;
+}
+
+.exam-detail input {
+    width: 100%;
+}
+
+
+.exam-detail .field-detail {
+    margin-bottom: 15px;
+}
+
+#btn-addQuestion, button {
+    border: 1px solid rgb(180, 173, 173);
+    border-radius: 5px;
+    background-color: #FFF;
+    margin: 2px;
+}
+
+#btn-addQuestion:hover, button:hover{
+    border: 2px solid rgb(202, 252, 179);    
+}
+
+#btn-loadContent {
+    border: 1px solid rgb(180, 173, 173);
+    border-radius: 5px;
+    background-color: #FFF;
+    margin: 2px;
+}
+
+#btn-loadContent:hover {
+    border: 2px solid rgb(202, 252, 179);
+}
+
+#btn-complete {
+    padding: 5px;
+    margin: 50px;
+}

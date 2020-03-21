@@ -1,0 +1,23 @@
+extends ./layouts/common.pug
+block styleSheet
+    link(rel='stylesheet', type='text/css', media='screen', href='/static/styles/formLogInUp.css')
+    link(rel='stylesheet', href='/static/styles/headerStyle.css')
+block content
+    include ./includes/navbar.pug
+    .signUpBox
+        header
+            h3#DangNhapBtn Đăng nhập
+            h3#DangKyBtn Đăng ký
+        div#error-noti= error
+        div#success-noti= success
+        form(action='/auth/login', method = 'POST')
+            .textbox
+                i.fa.fa-id-card
+                input(type='text', name = 'CMND', placeholder='Số CMND', required='')
+            .textbox
+                i.fa.fa-lock(aria-hidden='true')
+                input(type='password', name='pwd', placeholder='Mật khẩu', required='')
+            input.btn(type='submit', name='', value='Đăng nhập')
+
+block scripts
+    script(src='/static/JS/formLogInUp.js')

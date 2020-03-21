@@ -1,0 +1,29 @@
+#header
+  #under-header-container
+    #list-navbar
+      ul.menu
+        li
+          a(href='/') Trang chủ
+        li
+          a(href='/exam') Đề thi
+        li
+          a(href='/rank') Bảng vàng
+        if LoggedIn
+        else
+          li
+            a(href='/users/logIn') Đăng nhập
+    #search-bar
+      a.icon(href='#', id = "btnSearch")
+        i.fa.fa-search
+      input#search(type='text', placeholder='   ĐỀ THI [MÔN HỌC] ')
+    if LoggedIn
+      .dropdown
+        i.fa.fa-user
+        label(for="dropDownMenu")= userName
+        input(type="checkbox", name="dropDownMenu", value='name', id='dropDownMenu')
+        .dropdown-content
+          a(href='/users/account') Tài khoản
+          if teacher
+            a(href='/users/addExam') Thêm bài thi
+          a(href='/users/logout') Đăng xuất
+script(src="/static/JS/search.js")

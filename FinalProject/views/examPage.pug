@@ -1,0 +1,69 @@
+extends ./layouts/common.pug
+
+mixin examCard(id ,title, subject, user, date)
+    .exam-card-container
+        a.exam-card-wrapper(href= '/exams/' + id)
+            .exam-card-image
+                img(src='https://dummyimage.com/130x80/88a4e8/b4b8d4.png' alt='')
+            .exam-card-content
+                div.exam-card-title= title
+                .exam-card-subject
+                    i.fa.fa-book
+                    | #{subject}
+                .exam-card-author
+                    i.fa.fa-user
+                    | #{user}
+                .exam-card-date
+                    i.fa.fa-table
+                    | #{date}
+
+
+
+block styleSheet
+    link(href='/static/styles/headerStyle.css', rel='stylesheet')
+    link(rel="stylesheet", href="/static/styles/examPage.css")
+    
+
+block content
+    include ./includes/navbar.pug
+
+    h1#exam-page-title Đề thi các môn học
+    .exam-page-container
+        .exam-list-container
+            if exams
+                each examItem in exams
+                    +examCard(examItem._id, examItem.title, examItem.subject, examItem['user-name'], examItem.date)
+        .menu-filter-list
+            .title-filter M&ocirc;n h&#x1ECD;c
+            hr
+            form#subject-filter
+            .filter
+                input#subject-math(type='checkbox' name='subject-math')
+                label(for='subject-math')  To&aacute;n
+            .filter
+                input#subject-physic(type='checkbox' name='subject-physic')
+                label(for='subject-physic')  L&yacute;
+            .filter
+                input#subject-chemistry(type='checkbox' name='subject-chemistry')
+                label(for='subject-chemistry')  H&oacute;a
+            .filter
+                input#subject-biology(type='checkbox' name='subject-biology')
+                label(for='subject-biology')  Sinh
+            .filter
+                input#subject-history(type='checkbox' name='subject-history')
+                label(for='subject-history')  S&#x1EED;
+            .filter
+                input#subject-geography(type='checkbox' name='subject-geography')
+                label(for='subject-geography')  &Dstrok;&#x1ECB;a
+            .title-filter K&igrave; thi
+            hr
+            form#subject-filter
+            .filter
+                input#subject-math(type='checkbox' name='subject-math')
+                label(for='subject-math')  Gi&#x1EEF;a k&igrave;
+            .filter
+                input#subject-math(type='checkbox' name='subject-math')
+                label(for='subject-math')  Cu&#x1ED1;i k&igrave;
+            .filter
+                input#subject-math(type='checkbox' name='subject-math')
+                label(for='subject-math')  Thi th&#x1EED; THPT

@@ -1,0 +1,35 @@
+extends ./layouts/common.pug
+block styleSheet
+    link(rel='stylesheet', type='text/css', media='screen', href="/static/styles/formLogInUp.css")
+    link(rel='stylesheet', href='/static/styles/headerStyle.css')
+block content
+    include ./includes/navbar.pug
+    
+    .signUpBox
+        header
+            h3#DangNhapBtn Đăng nhập
+            h3#DangKyBtn Đăng ký
+        div#error-noti= error
+        form(action='/auth/signup' method='POST')
+            .textbox
+                i.fa.fa-id-card
+                input(type='text', name='CMND', placeholder='Số CMND')
+            .textbox
+                i.fa.fa-user(aria-hidden='true')
+                input(type='text', name='name' ,placeholder='Tên thí sinh')
+            .textbox
+                i.fa.fa-calendar
+                input(type='date', name='dateBirth')
+            .textbox
+                i.fa.fa-university
+                input(type='checkbox',id='role-user', name='role-user', value = "teacher" ) 
+                label(for='role-user') Are you a teacher ?
+            .textbox
+                i.fa.fa-map
+                input(type='text',name='country', placeholder='Nơi sinh')
+            .textbox
+                i.fa.fa-lock(aria-hidden='true')
+                input(type='password', name="pwd", placeholder='Mật khẩu', required)
+            input.btn(type='submit', value='Hoàn tất đăng ký', required)
+block scripts
+    script(src='/static/JS/formLogInUp.js')

@@ -1,0 +1,10 @@
+img {
+    position: relative;
+    left: 29%;
+}
+
+#main-page-title {
+    margin: 50px 0;
+    width: 100%;
+    text-align: center;
+}

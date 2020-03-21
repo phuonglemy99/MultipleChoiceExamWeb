@@ -1,0 +1,11 @@
+extends ./layouts/common.pug
+block styleSheet
+    link(href='/static/styles/headerStyle.css', rel='stylesheet')
+    link(href='/static/styles/mainPage.css', rel='stylesheet')    
+    link(href='/static/styles/footerStyle.css', rel='stylesheet')
+
+block content
+    include ./includes/navbar.pug
+    h1#main-page-title  THI TRẮC NGHIỆM ONLINE CÁC MÔN HỌC
+    img(src="/static/imgs/trac-nghiem-00.jpg", alt="Không có hình ảnh")
+    include ./includes/footer.pug

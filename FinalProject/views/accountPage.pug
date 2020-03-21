@@ -1,0 +1,43 @@
+extends ./layouts/common.pug
+
+block styleSheet
+    link(rel='stylesheet' href='/static/styles/headerStyle.css')
+    link(rel='stylesheet' href='/static/styles/accountPage.css')
+
+block content
+    include ./includes/navbar.pug
+    br
+    br
+    br
+    br
+    .account-page-container
+        .user-information
+            h1 Th&ocirc;ng tin t&agrave;i kho&#x1EA3;n
+            .field-information
+                span.title CMND:
+                span.info= user.CMND
+            .field-information
+                span.title H&#x1ECD; v&agrave; t&ecirc;n:
+                span.info= user.name
+            .field-information
+                span.title Ng&agrave;y sinh:
+                span.info= user.dateBirth
+            .field-information
+                span.title N&#x1A1;i sinh:
+                span.info= user.country
+            .field-information
+                span.title Vai tr&ograve;:
+                span.info= user['role-user'] === 'teacher' ? 'Giáo viên' : 'Học sinh'
+        if teacher
+            #user-exam
+                h1 Danh sách bài thi đã tạo
+                ul
+                    if exams
+                        each exam in exams
+                            li.exam-item= exam.title
+                                button Xóa
+                            form
+                                input(type="hidden", name="id-exam", id= exam._id)
+
+block scripts
+    script(src="/static/JS/accountPage.js")

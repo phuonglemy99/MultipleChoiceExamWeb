@@ -1,0 +1,71 @@
+extends ./layouts/common.pug
+
+block styleSheet
+    link(rel="stylesheet", href="/static/styles/headerStyle.css")
+    link(rel="stylesheet", href="/static/styles/addExamPage.css")
+
+block content
+    include ./includes/navbar.pug
+    .main-container
+        h1  Thêm đề thi
+        .addExam-container
+            form.exam-detail
+                h3 Thông tin cơ bản của đề thi
+                .field-detail
+                    label(for="title-exam") Tên đề thi 
+                    br
+                    input#title-exam(type="text", name="title-exam", required)
+                .field-detail
+                    label(for="subject-exam") Môn học  
+                    br
+                    select#subject-exam(type="text", name="subject-exam", required)
+                        option(value="Toán-Math") Toán
+                        option(value="Lý-Physics") Lý
+                        option(value="Hóa-Chemistry") Hóa
+                        option(value="Sinh-Biology") Sinh
+                        option(value="Sử-History") Sử
+                        option(value="Địa-Geography") Địa
+                        option(value="Anh-English") Anh Văn
+                        option(value="GDCD-PE") Giáo dục công dân
+                .field-detail
+                    label(for="type-exam") Loại kì thi
+                    br
+                    select#type-exam(name='type-exam')
+                        option(value='demo') Thi Thử
+                        option(value='midterm') Giữa kì
+                        option(value='final') Cuối kì
+                        
+                .field-detail
+                    label(for="date-exam") Ngày thi
+                    br
+                    input#date-exam(type="date", name="date-exam", required)
+                
+            form.question-detail
+                h3  Thông tin câu hỏi 
+                .question
+                    label(for='text-value') Câu hỏi của bạn là
+                    input(type="text", name="text-value", id="text-question")
+                .answer
+                    label(for='answer-1') Câu trả lời A
+                    input(type="text", name="answer-1", id="answer-1")
+                .answer
+                    label(for='answer-2') Câu trả lời B 
+                    input(type="text", name="answer-2", id="answer-2")
+                .answer
+                    label(for='answer-3') Câu trả lời C 
+                    input(type="text", name="answer-3", id="answer-3")
+                .answer
+                    label(for='answer-4') Câu trả lời D 
+                    input(type="text", name="answer-4", id="answer-4")
+                .answer
+                    label(for='true-answer') Câu trả lời đúng: 
+                    select#true-answer(name="true-answer")
+                        option(value="A") A
+                        option(value="B") B
+                        option(value="C") C
+                        option(value="D") D
+                input#btn-addQuestion(type="button", value="Thêm câu hỏi")
+        button#btn-complete Hoàn thành
+
+block scripts
+    script(src="/static/JS/sendAddExam.js")

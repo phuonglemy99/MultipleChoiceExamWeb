@@ -1,0 +1,35 @@
+extends ./layouts/common.pug
+
+mixin user(rank, name, CMND, score)
+    tr
+        td.rank= rank
+        td= name
+        td= CMND
+        td= score
+
+block styleSheet
+    link(rel='stylesheet', href='/static/styles/headerStyle.css')
+    link(rel='stylesheet', href='/static/styles/rankPage.css')
+
+block content
+    include ./includes/navbar.pug
+
+    .rank-page-container
+        header
+            h1
+             | B&#x1EA2;NG X&#x1EBE;P H&#x1EA0;NG &Dstrok;I&#x1EC2;M
+        .wrapper
+            table#rank-table
+                thead#head-table
+                    tr
+                    td H&#x1EA1;ng
+                    td T&ecirc;n th&iacute; sinh
+                    td CMND
+                    td &Dstrok;i&#x1EC3;m
+                tbody
+                    - var n = 1;
+                    if users
+                        each u in users
+                            + user(n, u.name, u.CMND, u.score)
+                            - n++
+

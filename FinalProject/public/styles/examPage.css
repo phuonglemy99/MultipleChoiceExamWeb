@@ -1,0 +1,65 @@
+body {
+    background-color: #f9f9f9;
+}
+
+#exam-page-title{
+    color: #46535e;
+    text-align: center;
+}
+
+.exam-page-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin:0 auto;
+}
+
+.exam-list-container {
+    display: flex;   
+    width: 60%;
+    flex-wrap: wrap;
+    background-color: #f3f4f5;
+}
+
+.exam-card-container {
+    margin: 5px;
+    width: 48%;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 1px 0.1px;
+    height: 80px;
+}
+
+a.exam-card-wrapper {
+    padding: 0;
+    height: 80px;
+    text-decoration: none;
+    display: flex;
+    cursor: pointer;
+}
+
+.exam-card-content {
+    color: #000;
+    height: 80px;
+    margin-left: 10px;
+}
+
+.exam-card-title {
+    font-size: 20px;
+    color: #46535e;
+}
+
+.exam-card-subject, .exam-card-author, .exam-card-date {
+    color: #9ca3a8;
+}
+
+.menu-filter-list {
+    width: 20%;
+    padding: 5px;
+}
+
+.title-filter {
+    font-size: 30px;
+    color:  #46535e;
+}
